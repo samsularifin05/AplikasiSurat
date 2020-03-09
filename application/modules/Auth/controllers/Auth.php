@@ -57,7 +57,7 @@ class Auth extends MX_Controller {
 	}
 
 	function logout(){
-		$this->session->unset_userdata('name');
+		$this->session->unset_userdata('nama');
 		$this->session->set_flashdata('Pesan', '<div class="alert alert-success text-center" role="alert">
 					Anda Telah Logout !!</div>');
 			redirect('Auth');
