@@ -21,7 +21,7 @@
 	  <hr class="sidebar-divider">
 	  
 	  <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/Dashboard/index') ?>">
+        <a class="nav-link" href="<?= base_url('/SuratMasuk/index') ?>">
           <i class="fas fa-envelope-open"></i>
           <span>Kelola Surat Masuk</span></a>
 	  </li>

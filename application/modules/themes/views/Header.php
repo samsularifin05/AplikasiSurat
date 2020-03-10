@@ -17,7 +17,28 @@
 
   <!-- Custom styles for this template-->
   <link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo base_url('assets/vendor/sweetalert2/sweetalert2.css') ?>">
+  <link href="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+  <style>
+    .float{
+    position:fixed;
+    top:12  0px;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#0C9;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+  }
 
+.my-float{
+	margin-top:22px;
+}
+  </style>
 </head>
 
 <body id="page-top">
