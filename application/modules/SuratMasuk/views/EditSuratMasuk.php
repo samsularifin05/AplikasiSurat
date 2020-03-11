@@ -90,8 +90,8 @@
                         </div>
                         <div class="col">
                         <div class="form-group">
-                                <label>Simpan</label>
-                                <input type="submit" class="form-control btn btn-primary" placeholder="Masukan Perihal...">
+                                <label>Update Informasi Surat</label>
+                                <input type="submit" value="Update Informasi Surat" class="form-control btn btn-primary" placeholder="Masukan Perihal...">
                             </div>
                         </div>
                     </div>

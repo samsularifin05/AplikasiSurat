@@ -25,7 +25,7 @@
                         <div class="col">
                         <div class="form-group">
                                 <label>Tanggal Pengirim</label>
-                                <input type="text" required class="form-control form-control-user" name="tgl_pengirim" placeholder="Masukan Tanggal Pengirim...">
+                                <input type="date" required class="form-control form-control-user" name="tgl_pengirim" placeholder="Masukan Tanggal Pengirim...">
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label>Tanggal Terima</label>
-                                <input type="text" required class="form-control form-control-user" name="tgl_terima" placeholder="Masukan Tanggal Terima...">
+                                <input type="date" required class="form-control form-control-user" name="tgl_terima" placeholder="Masukan Tanggal Terima...">
                             </div>
                         </div>
                         <div class="col">
@@ -88,7 +88,7 @@
                         <div class="col">
                         <div class="form-group">
                                 <label>Simpan</label>
-                                <input type="submit" class="form-control btn btn-primary" placeholder="Masukan Perihal...">
+                                <input type="submit" value="Simpan" class="form-control btn btn-primary" placeholder="Masukan Perihal...">
                             </div>
                         </div>
                     </div>
