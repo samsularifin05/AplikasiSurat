@@ -35,6 +35,7 @@
                       <th>disposisi</th>
                       <th>keterangan</th>
                       <th>File</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   
@@ -55,7 +56,8 @@
                         <td><?= $data->perihal ?></td>
                         <td><?= $data->disposisi ?></td>
                         <td><?= $data->keterangan ?></td>
-                        <td><a href="">Download</a<</td>
+                        <td><a href="<?= base_url('uploads/'.$data->nama_file.'') ?>" target="_blank">View</a<</td>
+                        <td><a href="<?= base_url('SuratMasuk/deletesurat/'.$data->no_surat.'') ?>" >Delete</a<</td>
                     </tr>
                   <?php endforeach; ?>
                   </tbody>
@@ -66,11 +68,4 @@
 
         </div>
 
-        <script>
-         Swal.fire({
-			title: 'Good Job !!!',
-			text: '".$messages."',
-			type: 'success',
-			backdrop: 'rgba(0,0,0,.4)'
-		})
-    </script>
+       

@@ -22,6 +22,23 @@ class SuratMasuk extends MX_Controller {
 	}
 
 	function SimpanSuratMasuk(){
+		$namafile 						= $this->input->post("no_surat");
+		$info = pathinfo($_FILES['nama_file']['name']);
+		$ext = $info['extension'];
+		$config['quality'] 				= '50%';
+		$config['width'] 				= 600;
+		$config['height'] 				= 400;
+		$config['upload_path']			= './uploads/';
+		$config['allowed_types'] 		= 'jpeg|gif|jpg|png|pdf|doc|docx'; //type yang dapat diakses bisa anda sesuaikan
+		// $config['encrypt_name'] 		= TRUE; //Enkripsi nama yang terupload
+		$nmfile 						=  $this->input->post("no_surat");
+		$config['file_name']            = $nmfile;
+		$this->upload->initialize($config);
+		$this->load->library('upload', $config);
+		if($_FILES['nama_file']){
+			$this->upload->do_upload('nama_file');	
+		}
+
 		$data["no_urut"] 				= $this->input->post("no_urut");
 		$data["no_surat"] 				= $this->input->post("no_surat");
 		$data["tgl_pengirim"] 			= $this->input->post("tgl_pengirim");
@@ -32,24 +49,9 @@ class SuratMasuk extends MX_Controller {
 		$data["perihal"]				= $this->input->post("perihal");
 		$data["disposisi"]				= $this->input->post("disposisi");
 		$data["keterangan"]				= $this->input->post("keterangan");
-		$data["nama_file"]				= $this->input->post("nama_file");
+		$data["nama_file"]				= $namafile.'.'.$ext;
 		
-		var_dump($this->input->post("nama_file"));
-		die();
-		$config['quality'] = '50%';
-		$config['width'] = 600;
-		$config['height'] = 400;
-		$config['upload_path'] = './uploads/';
-		$config['allowed_types'] = 'gif|jpg|png|pdf|doc|docx'; //type yang dapat diakses bisa anda sesuaikan
-		// $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
-		$nmfile =  $this->input->post("nama_file");
-		$config['file_name']            = $nmfile;
-		$this->upload->initialize($config);
-		$this->load->library('upload', $config);
-		if($_FILES['nama_file']){
-			$this->upload->do_upload('nama_file');	
-		}
-
+	
 		$insert = $this->surat_masuk_model->save($data);
 		if($insert['status'] == "berhasil"){
 			$this->session->set_flashdata('alert', success('Data Berhasil Disimpan'));
@@ -59,5 +61,19 @@ class SuratMasuk extends MX_Controller {
 		redirect('SuratMasuk/index');
 	}
 
+	 function deletesurat($id)
+	{
+
+		$delete = $this->surat_masuk_model->delete($id);
+		if($delete['status'] == "berhasil"){
+			$this->session->set_flashdata('alert', success('Data Berhasil Dihapus'));
+        }else{
+			$this->session->set_flashdata('alert', error('Data Gagal Dihapus !!!'));
+        }
+		redirect('SuratMasuk/index');
+
+	}
+
+	
 
 }

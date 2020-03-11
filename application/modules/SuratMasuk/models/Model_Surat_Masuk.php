@@ -7,10 +7,7 @@ class Model_Surat_Masuk extends CI_Model{
 		parent::__construct();
 	}
 	public $_table = "tbl_surat_masuk";
-	public $nama_file = "default.jpg";
-	public $no_urut, $no_surat,$tgl_pengirim,$tgl_terima,
-	$pengirim,$penerima,$unit_pengelola,$perihal,$disposisi,$keterangan;
-	
+
 
 	public function getAll()
     {
@@ -20,26 +17,13 @@ class Model_Surat_Masuk extends CI_Model{
     {
         return $this->db->get_where($this->_table, ["no_surat" => $id])->row();
 	}
-	public function save()
+	public function save($data)
     {
-		$data = array(
-			"no_urut" 				=> $this->input->post("no_urut"),
-			"no_surat" 				=> $this->input->post("no_surat"),
-			"tgl_pengirim" 			=> $this->input->post("tgl_pengirim"),
-			"tgl_terima" 			=> $this->input->post("tgl_terima"),
-			"pengirim"				=> $this->input->post("pengirim"),
-			"penerima"				=> $this->input->post("penerima"),
-			"unit_pengelola"		=> $this->input->post("unit_pengelola"),
-			"perihal"				=> $this->input->post("perihal"),
-			"disposisi"				=> $this->input->post("disposisi"),
-			"keterangan"			=> $this->input->post("keterangan"),
-			"nama_file"				=> $this->input->post("nama_file")
-		  );
-		  $insert = $this->db->insert('tbl_surat_masuk', $data); 
+		   $insert = $this->db->insert($this->_table, $data); 
 		  	if ($insert) {
 				return $pesan=array('status' => 'berhasil');
 			} else {
-				return $pesan=array('status' => 'gagal', 502);
+				return $pesan=array('status' => 'gagal');
 			}
 
 	}
@@ -60,10 +44,16 @@ class Model_Surat_Masuk extends CI_Model{
         $this->keterangan 		= $post["keterangan"];
         $this->nama_file 		= $post["nama_file"];
         return $this->db->update($this->_table, $this, array('id' => $post['id']));
-    }
+	}
+	
 	public function delete($id)
     {
-        return $this->db->delete($this->_table, array("id" => $id));
+		$query = $this->db->delete($this->_table, array('no_surat' => $id)); 
+		if ($query) {
+			return $pesan=array('status' => 'berhasil');
+		} else {
+			return $pesan=array('status' => 'gagal');
+		}
     }
 }
 
