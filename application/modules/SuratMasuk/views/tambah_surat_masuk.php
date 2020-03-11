@@ -82,13 +82,13 @@
                         <div class="col">
                         <div class="form-group">
                                 <label>File</label>
-                                <input type="file" class="form-control form-control-user" name="nama_file" placeholder="Masukan Perihal...">
+                                <input type="file" class="form-control form-control-user" name="nama_file" placeholder="Masukan File...">
                             </div>
                         </div>
                         <div class="col">
                         <div class="form-group">
                                 <label>Simpan</label>
-                                <input type="submit" value="Simpan" class="form-control btn btn-primary" placeholder="Masukan Perihal...">
+                                <input type="submit" value="Simpan" class="form-control btn btn-primary">
                             </div>
                         </div>
                     </div>
