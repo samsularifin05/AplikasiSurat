@@ -23,7 +23,7 @@
   <style>
     .float{
     position:fixed;
-    top:12  0px;
+    top:120px;
     width:60px;
     height:60px;
     bottom:40px;

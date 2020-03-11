@@ -46,6 +46,34 @@ class Model_Surat_Masuk extends CI_Model{
         return $this->db->update($this->_table, $this, array('id' => $post['id']));
 	}
 	
+	public function detail($id)
+    {
+	
+		$query =  $this->db->query("SELECT * FROM ".$this->_table." WHERE no_surat=".$id."");
+		
+		if($query->num_rows() == 1){
+			return $pesan=array(
+				'status' => 'berhasil',
+				'data'	 => $query->result_array()
+			);
+		}else{
+			return $pesan=array('status' => 'gagal');
+		}
+		
+
+	}
+	public function UbahData($id, $data)
+    {
+		$this->db->where($id);
+        $this->db->update($this->_table, $data);
+		$query = $this->db->affected_rows();
+		if($query) {
+			return $pesan=array('status' => 'berhasil');
+		} else {
+			return $pesan=array('status' => 'gagal');
+		}
+	}
+	
 	public function delete($id)
     {
 		$query = $this->db->delete($this->_table, array('no_surat' => $id)); 

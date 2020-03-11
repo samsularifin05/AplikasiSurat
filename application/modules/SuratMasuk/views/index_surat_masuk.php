@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-sm">
                 <a href="<?= base_url('SuratMasuk/tambahsurat') ?>" class="float">
-                <i class="fa fa-plus my-float"></i>
+                  <i class="fa fa-plus my-float"></i>
                 </a>
                 </div>
             </div>
@@ -57,7 +57,12 @@
                         <td><?= $data->disposisi ?></td>
                         <td><?= $data->keterangan ?></td>
                         <td><a href="<?= base_url('uploads/'.$data->nama_file.'') ?>" target="_blank">View</a<</td>
-                        <td><a href="<?= base_url('SuratMasuk/deletesurat/'.$data->no_surat.'') ?>" >Delete</a<</td>
+                        <td>
+                        
+                        <a href="<?= base_url('SuratMasuk/Edit/'.$data->no_surat.'') ?>" >Edit</a>
+                        <a href="<?= base_url('SuratMasuk/deletesurat/'.$data->no_surat.'') ?>" >Delete</a>
+                        
+                        </td>
                     </tr>
                   <?php endforeach; ?>
                   </tbody>
