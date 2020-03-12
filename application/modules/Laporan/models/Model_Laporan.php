@@ -7,6 +7,7 @@ class Model_Laporan extends CI_Model{
 		parent::__construct();
 	}
 	public $_table = "tbl_surat_masuk";
+	public $_table2 = "tbl_surat_keluar";
 
 
 	public function export($data)
@@ -25,6 +26,26 @@ class Model_Laporan extends CI_Model{
 			);
 		}
 	}
+
+	
+	public function M_Surat_Keluar($data)
+    {
+		$tgl_dari   = $data['tgl_dari'];
+		$tgl_sampai = $data['tgl_sampai'];
+		// $sql = "";
+		$query =  $this->db->query("SELECT * FROM ".$this->_table2." WHERE (tgl_surat BETWEEN '".$tgl_dari."' AND '".$tgl_sampai."')");
+		
+		if($query->num_rows() == 0){
+			return $pesan=array('status' => 'gagal');
+		}else{
+			return $pesan=array(
+				'status' => 'berhasil',
+				'data'	 => $query->result_array()
+			);
+		}
+	}
+
+
 	
 }
 

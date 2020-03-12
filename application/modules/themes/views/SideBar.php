@@ -42,7 +42,7 @@
       <hr class="sidebar-divider d-none d-md-block">
 
 	  <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/Dashboard/index') ?>">
+        <a class="nav-link" href="<?= base_url('/Laporan/LaporanSuratKeluar/index') ?>">
 		<i class="fas fa-mail-bulk"></i>
           <span>Laporan Surat Keluar</span></a>
 	  </li>
