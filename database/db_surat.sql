@@ -16,6 +16,27 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`db_surat` /*!40100 DEFAULT CHARACTER SE
 
 USE `db_surat`;
 
+/*Table structure for table `tbl_surat_keluar` */
+
+DROP TABLE IF EXISTS `tbl_surat_keluar`;
+
+CREATE TABLE `tbl_surat_keluar` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `no_urut` varchar(50) DEFAULT NULL,
+  `no_surat` varchar(50) DEFAULT NULL,
+  `tgl_surat` varchar(50) DEFAULT NULL,
+  `perihal` varchar(255) DEFAULT NULL,
+  `sifat_surat` varchar(255) DEFAULT NULL,
+  `tujuan` varchar(255) DEFAULT NULL,
+  `alamat` text DEFAULT NULL,
+  `tembusan` varchar(255) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
+  `nama_file` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tbl_surat_keluar` */
+
 /*Table structure for table `tbl_surat_masuk` */
 
 DROP TABLE IF EXISTS `tbl_surat_masuk`;
@@ -32,14 +53,11 @@ CREATE TABLE `tbl_surat_masuk` (
   `perihal` varchar(50) DEFAULT NULL,
   `disposisi` text DEFAULT NULL,
   `keterangan` text DEFAULT NULL,
-  `nama_file` text DEFAULT NULL,
+  `nama_file` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tbl_surat_masuk` */
-
-insert  into `tbl_surat_masuk`(`id`,`no_urut`,`no_surat`,`tgl_pengirim`,`tgl_terima`,`pengirim`,`penerima`,`unit_pengelola`,`perihal`,`disposisi`,`keterangan`,`nama_file`) values 
-(29,'6','6','65','56','56','56','56','56','56','56',NULL);
 
 /*Table structure for table `users` */
 
