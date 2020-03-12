@@ -66,6 +66,8 @@ class SuratMasuk extends MX_Controller {
 		}else{
 			$this->session->set_flashdata('alert', error('Data Gagal Ditampilkan !!!'));
 		}
+		redirect('SuratMasuk/index');
+
 	}
 
 	function UpdateData(){
