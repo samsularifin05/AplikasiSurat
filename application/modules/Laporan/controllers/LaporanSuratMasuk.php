@@ -145,18 +145,18 @@ class LaporanSuratMasuk extends MX_Controller {
 		 }
  
 		 // Set width kolom
-		 $excel->getActiveSheet()->getColumnDimension('A')->setWidth(5); // Set width kolom A
-		 $excel->getActiveSheet()->getColumnDimension('B')->setWidth(15); // Set width kolom B
-		 $excel->getActiveSheet()->getColumnDimension('C')->setWidth(25); // Set width kolom C
-		 $excel->getActiveSheet()->getColumnDimension('D')->setWidth(20); // Set width kolom D
-		 $excel->getActiveSheet()->getColumnDimension('E')->setWidth(20); // Set width kolom E
-		 $excel->getActiveSheet()->getColumnDimension('F')->setWidth(30); // Set width kolom E
-		 $excel->getActiveSheet()->getColumnDimension('G')->setWidth(30); // Set width kolom E
-		 $excel->getActiveSheet()->getColumnDimension('H')->setWidth(30); // Set width kolom E
-		 $excel->getActiveSheet()->getColumnDimension('I')->setWidth(30); // Set width kolom E
-		 $excel->getActiveSheet()->getColumnDimension('J')->setWidth(30); // Set width kolom E
-		 $excel->getActiveSheet()->getColumnDimension('K')->setWidth(30); // Set width kolom E
-		 $excel->getActiveSheet()->getColumnDimension('L')->setAutoSize(true);; // Set width kolom E
+		 $excel->getActiveSheet()->getColumnDimension('A')->setAutoSize(true);// Set width kolom A
+		 $excel->getActiveSheet()->getColumnDimension('B')->setAutoSize(true); // Set width kolom B
+		 $excel->getActiveSheet()->getColumnDimension('C')->setAutoSize(true); // Set width kolom C
+		 $excel->getActiveSheet()->getColumnDimension('D')->setAutoSize(true); // Set width kolom D
+		 $excel->getActiveSheet()->getColumnDimension('E')->setAutoSize(true); // Set width kolom E
+		 $excel->getActiveSheet()->getColumnDimension('F')->setAutoSize(true); // Set width kolom E
+		 $excel->getActiveSheet()->getColumnDimension('G')->setAutoSize(true); // Set width kolom E
+		 $excel->getActiveSheet()->getColumnDimension('H')->setAutoSize(true); // Set width kolom E
+		 $excel->getActiveSheet()->getColumnDimension('I')->setAutoSize(true); // Set width kolom E
+		 $excel->getActiveSheet()->getColumnDimension('J')->setAutoSize(true); // Set width kolom E
+		 $excel->getActiveSheet()->getColumnDimension('K')->setAutoSize(true); // Set width kolom E
+		 $excel->getActiveSheet()->getColumnDimension('L')->setAutoSize(true); // Set width kolom E
  
 		 // Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
 		 $excel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(-1);
