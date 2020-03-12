@@ -109,13 +109,12 @@ class SuratKeluar extends MX_Controller {
 	
 		$data["no_urut"] 				= $this->input->post("no_urut");
 		$data["no_surat"] 				= $this->input->post("no_surat");
-		$data["tgl_pengirim"] 			= $this->input->post("tgl_pengirim");
-		$data["tgl_terima"] 			= $this->input->post("tgl_terima");
-		$data["pengirim"] 				= $this->input->post("pengirim");
-		$data["penerima"] 				= $this->input->post("penerima");
-		$data["unit_pengelola"]			= $this->input->post("unit_pengelola");
+		$data["tgl_surat"] 				= $this->input->post("tgl_surat");
 		$data["perihal"]				= $this->input->post("perihal");
-		$data["disposisi"]				= $this->input->post("disposisi");
+		$data["sifat_surat"] 			= $this->input->post("sifat_surat");
+		$data["tujuan"] 				= $this->input->post("tujuan");
+		$data["alamat"] 				= $this->input->post("alamat");
+		$data["tembusan"]				= $this->input->post("tembusan");
 		$data["keterangan"]				= $this->input->post("keterangan");
 
 		$update = $this->surat_keluar_model->UbahData(array('no_surat'=> $this->input->post("no_surat")), $data);
