@@ -7,9 +7,12 @@ class Dashboard extends MX_Controller {
 	{
 		parent::__construct();
 		is_logged_in();
+		$this->load->model("Model_Dashboard",'Dashboard');
 	}
 	function index(){
-		$this->template->display('Dashboard/index_dashboard');
+		$data['SuratMasuk']  = $this->Dashboard->getDataJmlMasuk();
+		$data['SuratKeluar'] = $this->Dashboard->getDataJmKeluar();
+		$this->template->display('Dashboard/index_dashboard',$data);
 	}
 
 
